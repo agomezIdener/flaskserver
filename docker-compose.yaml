@@ -1,7 +1,10 @@
-version: "3"
-
+version: '3'
 services:
-  app:
+  backend:
     build: .
-    image: test_image:latest
-  
+    volumes:
+      - ./src:/app
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./.env
